@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FHIR Query UI</title>
+    <link rel="stylesheet" href="/web/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1>FHIR Query</h1>
+        <input type="text" id="queryInput" list="suggestions" placeholder="Enter query" />
+        <datalist id="suggestions">
+            <option value="Show me all diabetic patients over 50">
+            <option value="List hypertensive male patients over 40">
+            <option value="Asthmatic female patients over 30">
+        </datalist>
+        <button id="submitBtn">Submit</button>
+        <div id="output"></div>
+        <canvas id="chart" width="400" height="200"></canvas>
+        <table id="resultTable">
+            <thead>
+                <tr><th>Name</th><th>Age</th><th>Gender</th><th>Condition</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="/web/script.js"></script>
+</body>
+</html>
