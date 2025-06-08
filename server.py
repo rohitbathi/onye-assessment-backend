@@ -8,15 +8,23 @@ app = Flask(__name__)
 # if your front-end runs on e.g. http://localhost:3000, list that here instead
 CORS(
     app,
-    resources={r"/*": {"origins": ["http://localhost:3000"]}},
+    # resources={r"/*": {"origins": ["http://localhost:3000"]}},
+    origins="http://localhost:3000",
     supports_credentials=True,
 )
 
 PATIENTS = [
-    {"name": "Alice", "age": 55, "gender": "female", "condition": "diabetes"},
-    {"name": "Bob", "age": 60, "gender": "male", "condition": "hypertension"},
-    {"name": "Carol", "age": 35, "gender": "female", "condition": "asthma"},
-    {"name": "Dave", "age": 70, "gender": "male", "condition": "diabetes"},
+    {"name": "Anand",  "age": 55, "gender": "female", "condition": "diabetes"},
+    {"name": "Billa",    "age": 60, "gender": "male",   "condition": "hypertension"},
+    {"name": "Sarthak",  "age": 35, "gender": "female", "condition": "asthma"},
+    {"name": "David Warner",   "age": 70, "gender": "male",   "condition": "diabetes"},
+    {"name": "Evanka",    "age": 45, "gender": "female", "condition": "arthritis"},
+    {"name": "Fatima",  "age": 28, "gender": "male",   "condition": "covid-19"},
+    {"name": "Koushik",  "age": 40, "gender": "female", "condition": "cancer"},
+    {"name": "Vignesh",  "age": 65, "gender": "male",   "condition": "heart disease"},
+    {"name": "Pujith",    "age": 55, "gender": "female", "condition": "depression"},
+    {"name": "Roja",   "age": 72, "gender": "male",   "condition": "arthritis"},
+    {"name": "Samantha",   "age": 19, "gender": "male",   "condition": "obesity"},
 ]
 
 def filter_patients(age_gt, conditions, gender):
@@ -47,4 +55,4 @@ def query():
     return jsonify({'fhir_request': fhir_request, 'patients': patients})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=4000)

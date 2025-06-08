@@ -3,9 +3,15 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 CONDITION_KEYWORDS = {
-    "diabetes": {"diabetes", "diabetic"},
-    "hypertension": {"hypertension", "hypertensive"},
-    "asthma": {"asthma", "asthmatic"},
+    "diabetes":       {"diabetes", "diabetic"},
+    "hypertension":   {"hypertension", "hypertensive"},
+    "asthma":         {"asthma", "asthmatic"},
+    "arthritis":      {"arthritis", "arthritic"},
+    "cancer":         {"cancer", "malignancy"},
+    "covid-19":       {"covid-19", "covid19", "coronavirus"},
+    "heart disease":  {"heart disease", "cardiovascular disease", "cardiac"},
+    "depression":     {"depression", "depressive"},
+    "obesity":        {"obesity", "obese"},
 }
 
 GENDER_KEYWORDS = {"male", "female"}
